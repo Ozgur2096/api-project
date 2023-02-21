@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
@@ -17,6 +20,21 @@ ul {
 }
 
 #map {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
+  border: red solid 1px;
+}
+
+.info {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 255, 255, 0.5);
+}
+.display-block {
+  display: block;
 }

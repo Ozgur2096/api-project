@@ -1,6 +1,6 @@
 import { USER_INTERFACE_ID, CONTINUE_BUTTON_ID } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
-import { initQuestionPage } from './questionPage.js';
+import { initMainPage } from './mainPage.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -15,5 +15,5 @@ export const initWelcomePage = () => {
 };
 
 const startApplication = () => {
-  initQuestionPage();
+  initMainPage();
 };
