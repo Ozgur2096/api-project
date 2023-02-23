@@ -7,9 +7,10 @@ import { createMainPageElement } from '../views/mainPageView.js';
 import { openInfoWindow } from './infoPage.js';
 import { loadMap, initMap } from '../utilities/loadMap.js';
 import { displayDataOnMap } from '../features/displayDataOnMap.js';
+import { loadPreview } from '../utilities/loadPreview.js';
 
 //async function
-export const initMainPage = () => {
+export const initMainPage = async () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -17,10 +18,10 @@ export const initMainPage = () => {
   userInterface.appendChild(mapElement);
   loadMap();
   window.initMap = initMap;
-  // displayDataOnMap();
 
   document.getElementById(SEARCH_BUTTON_ID).addEventListener('click', () => {
-    displayDataOnMap();
+    // displayDataOnMap(); // it will be changed
+    loadPreview();
   });
   document
     .getElementById(OPEN_INFO_BUTTON_ID)
