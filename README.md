@@ -1,8 +1,6 @@
 # The Name of The Application
 
-This application helps photographers, botanists or any adventurers who like to spend time in nature. With this application, you can find information about the plant you entered the name of and you can see the areas that the plant has been observed on the map. Enter the name of the plant, preferably scientific name, and explore nature.
-
-Color palette: https://icolorpalette.com/sea-green-and-amazon
+This application helps photographers, botanists or any adventurers who like to spend time in nature. With this application, you can find information about a plant you entered the name of and you can see the areas that the plant has been observed on the map. Enter the name of the plant, preferably scientific name, and explore nature.
 
 ## Demo
 
@@ -34,8 +32,8 @@ index.html
 - [x] (must have) The app needs to interact with an API to grab data.
 - [ ] (must have) The app needs to have loading/error handling for the interaction with the API and needs to show this to the user, not just a console.log.
 - [x] (must have) The app needs some user interaction such that you need to grab different data from the API. So you cannot just grab everything from the API and store it locally with one fetch.
-- [ ] (must have) Change the title
-- [ ] (must have) Add a favicon
+- [x] (must have) Change the title
+- [x] (must have) Add a favicon
 - [ ] (must have) Plant data must be displayed on the map.
 - [ ] (nice to have) User geo location can be displayed on the map.
 - [ ] (nice to have) When the user enter the common name of the plant, he/she can see the scientific names and the images of different species.

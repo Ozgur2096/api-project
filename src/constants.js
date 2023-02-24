@@ -3,7 +3,8 @@ export const PLANT_PREVIEW_CONTAINER_ID = 'plant-preview-container';
 export const INFO_WINDOW_ID = 'info-window';
 export const CONTINUE_BUTTON_ID = 'continue-button';
 export const SEARCH_BUTTON_ID = 'search-button';
-export const OPEN_INFO_BUTTON_ID = 'open-info-button';
+
+export const DISPLAY_ON_MAP_CLASS = 'display-on-map';
 export const CLOSE_INFO_BUTTON_ID = 'close-info-button';
 export const MAP_DIV_ID = 'map';
 

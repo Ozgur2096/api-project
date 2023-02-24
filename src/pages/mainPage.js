@@ -1,33 +1,43 @@
 import {
-  OPEN_INFO_BUTTON_ID,
+  DISPLAY_ON_MAP_CLASS,
   SEARCH_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
 import { createMainPageElement } from '../views/mainPageView.js';
-import { openInfoWindow } from './infoPage.js';
+import { openInfoWindow, showError } from './infoPage.js';
 import { loadMap, initMap } from '../utilities/loadMap.js';
 import { displayDataOnMap } from '../features/displayDataOnMap.js';
-import { loadPreview } from '../utilities/loadPreview.js';
+import { loadPreview } from '../features/loadPreview.js';
+import { getUserGeoLocation } from '../features/displayUserLocation.js';
 
-//async function
 export const initMainPage = async () => {
-  const userInterface = document.getElementById(USER_INTERFACE_ID);
-  userInterface.innerHTML = '';
+  try {
+    const userInterface = document.getElementById(USER_INTERFACE_ID);
+    userInterface.innerHTML = '';
 
-  const mapElement = createMainPageElement();
-  userInterface.appendChild(mapElement);
-  loadMap();
-  window.initMap = initMap;
+    let userLocation = await getUserGeoLocation(); // undefined'ta sorun yok ama geolocation izni verilmezse program duruyor error handling lazim
 
-  document.getElementById(SEARCH_BUTTON_ID).addEventListener('click', () => {
-    // displayDataOnMap(); // it will be changed
-    loadPreview();
-  });
-  document
-    .getElementById(OPEN_INFO_BUTTON_ID)
-    .addEventListener('click', toTheInfoPage);
-};
+    const mapElement = createMainPageElement();
+    userInterface.appendChild(mapElement);
+    loadMap();
+    window.initMap = initMap;
 
-const toTheInfoPage = () => {
-  openInfoWindow();
+    document
+      .getElementById(SEARCH_BUTTON_ID)
+      .addEventListener('click', async () => {
+        await loadPreview();
+
+        document
+          .querySelectorAll(`.${DISPLAY_ON_MAP_CLASS}`)
+          .forEach((button) => {
+            button.addEventListener('click', (e) => {
+              const scientificName = e.target.previousElementSibling.innerText;
+              displayDataOnMap(scientificName, userLocation);
+            });
+          });
+      });
+  } catch (error) {
+    openInfoWindow();
+    showError(error);
+  }
 };

@@ -1,5 +1,5 @@
 import { I_NATURALIST_URL, PLANT_PREVIEW_CONTAINER_ID } from '../constants.js';
-import { pickAnElement } from './randomElementPicker.js';
+import { pickAnElement } from '../utilities/randomElementPicker.js';
 import { createPreviewElement } from '../views/previewView.js';
 
 const getScientificNames = async (speciesName) => {
@@ -13,7 +13,7 @@ const getScientificNames = async (speciesName) => {
     locale: 'en',
     lat: 52,
     lng: 5.2,
-    radius: 70, // km
+    radius: 100, // km
   });
   const response = await fetch(`${apiUrl}?${params}`);
   const result = await response.json();
@@ -25,7 +25,6 @@ const getScientificNames = async (speciesName) => {
 
   if ([...scientificNamesSet].length > 4)
     return [...scientificNamesSet].slice(0, 4);
-  console.log([...scientificNamesSet]);
   return [...scientificNamesSet];
 };
 
@@ -38,7 +37,7 @@ const getImageUrl = async (scientificNameOfThePlant) => {
     locale: 'en',
     lat: 52,
     lng: 5.2,
-    radius: 70, // km
+    radius: 80, // km
   });
   const response = await fetch(`${apiUrl}?${params}`);
   const data = await response.json();
@@ -65,8 +64,7 @@ export const loadPreview = async () => {
     recommendedScientificNames.forEach(async (scientificName, index) => {
       const previewElement = createPreviewElement();
       container.appendChild(previewElement);
-      console.log(scientificName);
-      container.children[index].lastElementChild.innerText = scientificName;
+      container.children[index].children[1].innerText = scientificName;
       let imageUrl = await getImageUrl(scientificName);
       container.children[index].firstElementChild.src = imageUrl;
     });
