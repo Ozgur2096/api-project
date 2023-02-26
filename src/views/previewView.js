@@ -6,9 +6,9 @@ export const createPreviewElement = () => {
 
   element.innerHTML = String.raw`
     
-      <img alt="no photo in database">
-      <p></p>
-      <button class="${DISPLAY_ON_MAP_CLASS}">On Map</button>
+  <button class="${DISPLAY_ON_MAP_CLASS}">On Map</button>
+  <p></p>
+  <img alt="no photo in database">
       
     
   `;

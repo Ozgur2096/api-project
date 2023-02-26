@@ -5,10 +5,9 @@
   --color-frost: rgb(240, 246, 226);
   --color-white-rock: rgb(229, 227, 200);
   --color-spicy: rgb(144, 100, 76);
-  --color-spicy2: rgb(144, 100, 76,0.7);
+  --color-spicy2: rgb(144, 100, 76, 0.7);
   --color-alternative: rgb(166, 201, 83);
-  --color-pink:rgb(248, 158, 148);
-  
+  --color-pink: rgb(248, 158, 148);
 }
 * {
   box-sizing: border-box;
@@ -20,8 +19,9 @@ body {
   padding: 0;
   font-family: 'Sofadi One', cursive;
 }
-body{
-  background: url(../public/images/ForestFrame.png) no-repeat center center/cover;
+body {
+  background: url(../public/images/ForestFrame.png) no-repeat center
+    center/cover;
   background-color: var(--color-frost);
   display: flex;
   align-items: center;
@@ -78,33 +78,45 @@ input {
   height: 300px;
   width: 300px;
   animation: 1.5s infinite linear border-animation;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
-@keyframes border-animation{
-  0%{box-shadow: 1px 1px 10px var(--color-mantis), -1px -1px 10pxvar(--color-mantis),-1px 1px 10px var(--color-mantis),1px -1px 10px var(--color-mantis);}
-  50%{box-shadow: 2px 2px var(--color-mantis),-2px -2px var(--color-spicy),-2px 2px var(--color-mantis),2px -2px var(--color-mantis);}
-  100%{box-shadow: 1px 1px 10px var(--color-mantis), -1px -1px 10pxvar(--color-mantis),-1px 1px 10px var(--color-mantis),1px -1px 10px var(--color-mantis);}
+@keyframes border-animation {
+  0% {
+    box-shadow: 1px 1px 10px var(--color-mantis),
+      -1px -1px 10pxvar (--color-mantis), -1px 1px 10px var(--color-mantis),
+      1px -1px 10px var(--color-mantis);
+  }
+  50% {
+    box-shadow: 2px 2px var(--color-mantis), -2px -2px var(--color-spicy),
+      -2px 2px var(--color-mantis), 2px -2px var(--color-mantis);
+  }
+  100% {
+    box-shadow: 1px 1px 10px var(--color-mantis),
+      -1px -1px 10pxvar (--color-mantis), -1px 1px 10px var(--color-mantis),
+      1px -1px 10px var(--color-mantis);
+  }
 }
 /* GOOGLE MAPS BUTTONS */
 #map a {
   display: none;
 }
-.gm-svpc, .gm-control-active.gm-fullscreen-control {
+.gm-svpc,
+.gm-control-active.gm-fullscreen-control {
   display: none;
 }
 .gmnoprint {
-  transform: scale(0.6);  
+  transform: scale(0.6);
 }
 /* map/satellite button */
-.gm-style-mtc{
-  transform:translate(100%,40%);
+.gm-style-mtc {
+  transform: translate(100%, 40%);
 }
 /* +/- button */
-.gm-style > div:nth-child(14) > div:first-child > div:nth-child(3) { 
+.gm-style > div:nth-child(14) > div:first-child > div:nth-child(3) {
   position: absolute;
   top: 100%;
   left: 0;
-  transform:translate(100%,-100%);
+  transform: translate(100%, -100%);
 }
 
 /* PREVIEW */
@@ -123,10 +135,10 @@ input {
   align-items: center;
 }
 .plant-preview img {
+  border: var(--color-amazon) solid 3px;
   border-radius: 15px;
-  width:92px;
+  width: 92px;
   height: auto;
-  
 }
 .plant-preview p {
   color: var(--color-amazon);

@@ -1,16 +1,22 @@
 import { GOOGLE_API_KEY } from '../apiKeys.js';
-import { getUserGeoLocation } from '../features/displayUserLocation.js';
 
-export function loadMap() {
+export function loadMap(functionNameString) {
   const googleUrl = document.getElementById('google-maps-api');
-  googleUrl.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&callback=initMap&v=weekly`;
+  googleUrl.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&callback=${functionNameString}&v=weekly`;
 }
 
 let map;
-export function initMap(markersArray = [], userLocation) {
+export function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 52.5, lng: 5.3 },
     zoom: 6,
+  });
+}
+
+export function updateMap(markersArray = [], userLocation) {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: userLocation.latitude, lng: userLocation.longitude },
+    zoom: 8,
   });
 
   markersArray.forEach((marker) => {

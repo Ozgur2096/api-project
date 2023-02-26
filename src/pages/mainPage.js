@@ -5,7 +5,7 @@ import {
 } from '../constants.js';
 import { createMainPageElement } from '../views/mainPageView.js';
 import { openInfoWindow, showError } from './infoPage.js';
-import { loadMap, initMap } from '../utilities/loadMap.js';
+import { loadMap, initMap, updateMap } from '../utilities/loadMap.js';
 import { displayDataOnMap } from '../features/displayDataOnMap.js';
 import { loadPreview } from '../features/loadPreview.js';
 import { getUserGeoLocation } from '../features/displayUserLocation.js';
@@ -15,11 +15,11 @@ export const initMainPage = async () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
-    let userLocation = await getUserGeoLocation(); // undefined'ta sorun yok ama geolocation izni verilmezse program duruyor error handling lazim
+    let userLocation = await getUserGeoLocation();
 
     const mapElement = createMainPageElement();
     userInterface.appendChild(mapElement);
-    loadMap();
+    loadMap('initMap');
     window.initMap = initMap;
 
     document
@@ -31,7 +31,9 @@ export const initMainPage = async () => {
           .querySelectorAll(`.${DISPLAY_ON_MAP_CLASS}`)
           .forEach((button) => {
             button.addEventListener('click', (e) => {
-              const scientificName = e.target.previousElementSibling.innerText;
+              const scientificName = e.target.nextElementSibling.innerText;
+              loadMap('updateMap');
+              window.updateMap = updateMap;
               displayDataOnMap(scientificName, userLocation);
             });
           });
