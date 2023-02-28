@@ -1,4 +1,4 @@
-# The Name of The Application
+# Plant Finder
 
 This application helps photographers, botanists or any adventurers who like to spend time in nature. With this application, you can find information about a plant you entered the name of and you can see the areas that the plant has been observed on the map. Enter the name of the plant, preferably scientific name, and explore nature.
 
