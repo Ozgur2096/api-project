@@ -41,7 +41,7 @@ const getImageUrl = async (scientificNameOfThePlant) => {
     locale: 'en',
     lat: 52,
     lng: 5.2,
-    radius: 80, // km
+    radius: 100, // km
   });
   const response = await fetch(`${apiUrl}?${params}`);
   const data = await response.json();

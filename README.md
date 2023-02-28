@@ -4,7 +4,8 @@ This application helps photographers, botanists or any adventurers who like to s
 
 ## Demo
 
-https://beamish-halva-bbd698.netlify.app/
+[https://subtle-taffy-e1ff0d.netlify.app/]
+
 ## Structure
 
 ```

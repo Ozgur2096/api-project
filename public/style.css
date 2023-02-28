@@ -5,7 +5,7 @@
   --color-frost: rgb(240, 246, 226);
   --color-white-rock: rgb(229, 227, 200);
   --color-spicy: rgb(144, 100, 76);
-  --color-spicy2: rgb(144, 100, 76, 0.7);
+  --color-spicy2: rgb(144, 100, 76, 0.9);
   --color-alternative: rgb(166, 201, 83);
   --color-pink: rgb(248, 158, 148);
 }
@@ -83,7 +83,7 @@ input {
 @keyframes border-animation {
   0% {
     box-shadow: 1px 1px 10px var(--color-mantis),
-      -1px -1px 10pxvar (--color-mantis), -1px 1px 10px var(--color-mantis),
+      -1px -1px 10px var (--color-mantis), -1px 1px 10px var(--color-mantis),
       1px -1px 10px var(--color-mantis);
   }
   50% {
@@ -92,7 +92,7 @@ input {
   }
   100% {
     box-shadow: 1px 1px 10px var(--color-mantis),
-      -1px -1px 10pxvar (--color-mantis), -1px 1px 10px var(--color-mantis),
+      -1px -1px 10px var (--color-mantis), -1px 1px 10px var(--color-mantis),
       1px -1px 10px var(--color-mantis);
   }
 }
