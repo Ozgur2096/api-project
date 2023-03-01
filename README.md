@@ -23,6 +23,10 @@ src
   └── mainPageView.js
   └── previewView.js
   └── welcomeView.js
+└── utilities
+  └── fetchData.js
+  └── loadMap.js
+  └── randomElementPicker.js
 └── apiKeys.js
 └── app.js
 └── constants.js
